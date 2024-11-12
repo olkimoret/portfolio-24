@@ -1,0 +1,2 @@
+[build.environment]
+NODE_VERSION = "20.x"  # Or use "18.x" if you run into compatibility issues
