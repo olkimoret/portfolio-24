@@ -1,0 +1,183 @@
+/* ==================================================
+   hats / about
+================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+
+.panels h3
+{
+  color: #d76762;
+}
+.warpper{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 90px;
+}
+
+.wrapper .inner 
+{
+    padding: 3em 0 6em 0;
+
+}
+
+.tabs 
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tab{
+  cursor: pointer;
+  padding: 15px 20px;
+  margin: auto 0;
+  background: #ffffff12;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  flex: 0 0 16.67%;
+  text-align: center;
+}
+
+.tab:hover
+{
+  cursor: pointer;
+  background: #ffffff3d;
+}
+
+.panels{
+  background:#fff;
+  min-height:200px;
+  width:100%;
+  overflow:hidden;
+  padding: 20px 60px;
+}
+.panel{
+  display:none;
+  animation: fadein 1000ms ease;
+  height: 600px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel,
+#six:checked ~ .panels #six-panel
+{
+  display: flex;
+}
+
+#one:checked ~ .panels #one-panel
+{
+  border-radius:0px 3px 3px 3px;
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab,
+#six:checked ~ .tabs #six-tab
+{
+  background:#fff;
+  color:#000;
+}
+
+.panel .text-side, .panel .image-side
+{
+  width: 50%;
+  color: #000;
+}
+
+.panel .text-side
+{
+  padding: .75em;
+}
+
+.panel .text-side p,
+.panel .text-side ul
+{
+  font-size: 0.9em;
+  font-family: "Source Sans Pro";
+  line-height: 1.4em;
+  letter-spacing: 0;
+  margin: 0 0 1em 0;
+}
+
+.panel .text-side h3:last-of-type{
+  margin: 2.5em 0 1em 0;
+}
+
+.panel .image-side img
+{
+  max-width: 100%;
+  display: flex;
+  position: absolute;
+  margin-top: -50%;
+}
+
+.panel .image-side img:nth-of-type(2)
+{
+opacity: 0;
+}
+
+
+
+#one:checked ~ .panels #one-panel .image-side img:nth-of-type(2),
+#two:checked ~ .panels #two-panel .image-side img:nth-of-type(2),
+#three:checked ~ .panels #three-panel .image-side img:nth-of-type(2),
+#four:checked ~ .panels #four-panel .image-side img:nth-of-type(2),
+#five:checked ~ .panels #five-panel .image-side img:nth-of-type(2),
+#six:checked ~ .panels #six-panel .image-side img:nth-of-type(2)
+{
+
+
+  animation: fadein  .45s ease-in 0.3s forwards;
+
+}
+
+
+
+.panel .image-side
+{
+  position: relative;
+}
+/* ==================================================
+   END hats / about
+================================================== */
+
