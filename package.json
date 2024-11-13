@@ -2,6 +2,6 @@ npm init -y
 
 {
   "engines": {
-    "node": "18.x"
+    "node": "18.17.1"
   }
 }
