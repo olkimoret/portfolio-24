@@ -313,7 +313,7 @@ input, select, textarea {
   @media screen and (max-width: 736px) {
 
     h2 {
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     h3 {
@@ -2435,14 +2435,43 @@ input, select, textarea {
     position: relative;
   }
 
+  .image.multiple {
+    display:flex;
+    gap:25px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+
     .image img {
       border-radius: 5px;
       display: block;
       margin-bottom: 4em;
     }
+
     .image.wide img {
       max-width:100%;
       margin-top: 3em;
+    }
+
+    .image.multiple img {
+      max-width: 45%;
+      margin-top: 3em;
+    }
+
+    @media screen and (max-width: 480px) {
+
+      .image.multiple {
+        display: block;
+      }
+
+      .image.multiple img {
+        max-width: 100%;
+        margin: 0 0 2em 0 !important;
+      }
+
     }
 
     .image.narrow img {
@@ -3996,7 +4025,7 @@ input, select, textarea {
         }
 
         .wrapper .inner {
-          padding: 2em 2em 0.1em 2em ;
+          padding: 4em 2em 0.1em 3em;
         }
 
         .wrapper.spotlight .inner {
