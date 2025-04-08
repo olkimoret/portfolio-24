@@ -215,6 +215,14 @@ opacity: 0;
 /* Mobile only styles */
 @media screen and (max-width: 768px) {
     
+    .wrapper:before, .wrapper:after {
+        height: 0;
+    }
+
+    .wrapper .inner {
+    padding: 0 0 1em 0;
+    }
+
   .tab {
     font-size: 0;
     flex: 0 0 calc(16.66% - 2px);
