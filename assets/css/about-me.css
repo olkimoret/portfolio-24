@@ -38,8 +38,9 @@
   display:inline-block;
   color:#fff;
   border-radius:3px 3px 0px 0px;
-  flex: 0 0 16.67%;
+  flex: 0 0 auto;
   text-align: center;
+  flex: 0 0 calc(16.66%);
 }
 
 .tab:hover
@@ -177,7 +178,164 @@ opacity: 0;
 {
   position: relative;
 }
+
+/* Default: hide icons, show text */
+.tab .icon-mobile {
+  display: none;
+}
+.tab .label-text {
+  display: inline;
+}
+
+.icon-mobile.icon-active,
+.icon-mobile.icon-default {
+  display: none;
+}
+
 /* ==================================================
    END hats / about
 ================================================== */
+
+  label {
+
+    transition: .15s cubic-bezier(0.4, 0, 0.4, 1.5);
+  }
+
+
+/* ==================================================
+   MOBILE STYLING
+================================================== */
+
+/* Default state */
+.icon-mobile.icon-active {
+  display: none;
+}
+
+
+/* Mobile only styles */
+@media screen and (max-width: 768px) {
+    
+  .tab {
+    font-size: 0;
+    flex: 0 0 calc(16.66% - 2px);
+    margin-right: 2px;
+    padding: 10px 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .tab:last-child {
+    margin-right: 0;
+  }
+
+  .tab .icon-mobile {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tab .label-text {
+    display: none;
+  }
+
+  /* Show default icon, hide active by default */
+  .icon-mobile.icon-default {
+    display: block;
+  }
+
+  .icon-mobile.icon-active {
+    display: none;
+  }
+
+  /* === SELECTED TAB: toggle active icon === */
+  #one:checked ~ .tabs #one-tab .icon-default,
+  #two:checked ~ .tabs #two-tab .icon-default,
+  #three:checked ~ .tabs #three-tab .icon-default,
+  #four:checked ~ .tabs #four-tab .icon-default,
+  #five:checked ~ .tabs #five-tab .icon-default,
+  #six:checked ~ .tabs #six-tab .icon-default {
+    display: none;
+  }
+
+  #one:checked ~ .tabs #one-tab .icon-active,
+  #two:checked ~ .tabs #two-tab .icon-active,
+  #three:checked ~ .tabs #three-tab .icon-active,
+  #four:checked ~ .tabs #four-tab .icon-active,
+  #five:checked ~ .tabs #five-tab .icon-active,
+  #six:checked ~ .tabs #six-tab .icon-active {
+    display: block;
+  }
+
+
+
+    #page-wrapper.about .panel {
+      flex-direction: column;
+      min-height: 500px;
+    }
+
+    .warpper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 90px;
+  }
+
+  #one:checked ~ .panels #one-panel,
+  #two:checked ~ .panels #two-panel,
+  #three:checked ~ .panels #three-panel,
+  #four:checked ~ .panels #four-panel,
+  #five:checked ~ .panels #five-panel,
+  #six:checked ~ .panels #six-panel
+  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+    #page-wrapper.about .panel .image-side {
+      order: -1;
+      width: 100%;
+      position: relative; /* restore normal flow */
+      min-height: 340px;
+    }
+
+    #page-wrapper.about .panel .text-side {
+      order: 0;
+      width: 100%;
+      position: relative; /* restore normal flow */
+    }
+    
+    #page-wrapper.about .panel .image-side img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 0;
+    }
+
+
+    .panels{
+      background:#fff;
+      min-height:800px;
+      width:100%;
+      overflow:hidden;
+      padding: 20px 60px;
+    }
+
+
+
+
+
+}
+
+
 
